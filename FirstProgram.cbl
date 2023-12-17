@@ -11,8 +11,8 @@
        WORKING-STORAGE SECTION.
       * 77  WS-DATE PIC X(10).
        01  A.
-         02  X1 PIC 99.
-         02  X2 REDEFINES X1 PIC X(2).
+         02  X1 PIC X(2).
+         02  X2 REDEFINES X1 PIC 9(2) VALUE "EE".
          02  X3 PIC X(15) VALUE ALL '*'.
 
        01  Z REDEFINES A.
@@ -30,6 +30,9 @@
 
        PROCEDURE DIVISION.
        MAIN-PROCEDURE.
+           ACCEPT X1.
+           DISPLAY X2.
+           DISPLAY Z.
            DISPLAY B.
             STOP RUN.
        END PROGRAM WORK_WITH_REDIFINE.
